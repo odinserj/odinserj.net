@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://odinserj.net/sitemap.xml 
+Sitemap: http://odinserj.me/sitemap.xml 
