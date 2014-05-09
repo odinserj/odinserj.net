@@ -1,0 +1,30 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            odinserj
+tagline:          'A Jekyll theme'
+description:      'on development'
+url:              http://odinserj.me
+lang:             en
+
+author:
+  name:           'odinserj'
+  url:            https://twitter.com/odinserj
+
+paginate:         5
+
+github:
+  repo:           https://github.com/odinserj/odinserj.github.io
+
+ga_tracking_id:   UA-49710849-1
+ga_tracking_site: odinserj.me
+
+disqus_short_name: odinserjme
+disqus_show_comment_count: true

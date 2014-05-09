@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>odinserj</title>
+ <link href="http://odinserj.net/atom.xml" rel="self"/>
+ <link href="http://odinserj.net/"/>
+ <updated>2014-05-10T00:43:50+04:00</updated>
+ <id>http://odinserj.net</id>
+ <author>
+   <name>odinserj</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Не было у бабы забот…</title>
+   <link href="http://odinserj.net/2014/05/10/open-source/"/>
+   <updated>2014-05-10T00:00:00+04:00</updated>
+   <id>http://odinserj.net/2014/05/10/open-source</id>
+   <content type="html">&lt;p&gt;… занялась баба open-source &lt;a href=&quot;http://hangfire.io&quot;&gt;проектом&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
