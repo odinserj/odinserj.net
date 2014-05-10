@@ -22,7 +22,7 @@ paginate:         5
 github:
   repo:           https://github.com/odinserj/odinserj.net
 
-ga_tracking_id:   UA-49710849-1
+ga_tracking_id:   UA-49710849-3
 ga_tracking_site: odinserj.net
 
 disqus_short_name: odinserjnet
