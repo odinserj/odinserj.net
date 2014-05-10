@@ -15,6 +15,8 @@ The name of the method was choosed to highlight that invocation of a given metho
 
 What does this mean? Several things, that may break your usual expectations about method invocation process. You should be aware of them.
 
+## Differences between local and background method invocation
+
 ### Method invocation is being serialized
 
 Before creating a background job, the information about the given method (its type, method name and parameter types) is being serialized to strings. MethodInfo serialization process is absolutely invisible to a user, unlike arguments serialization. 
@@ -175,7 +177,7 @@ public void NewMethod(stirng arg1, int arg2, double arg3)
 }
 ```
 
-### Summary
+## Summary
 
 There are a lot of differences between local and background method invocation, but you likely know the most of them, because they relate to asynchronous and concurrent programming as well.
 
