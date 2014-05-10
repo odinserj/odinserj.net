@@ -270,3 +270,7 @@ footer {
     float: right;
   }
 }
+
+.pull-right {
+  float: right;
+}

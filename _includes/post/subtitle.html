@@ -1,0 +1,12 @@
+{% if post.date %}
+  {% assign date = post.date %}
+{% else %}
+  {% assign date = page.date %}
+{% endif %}
+
+<span class="post-subtitle">
+  <span>{{ date | date_to_string }}</span>  
+  <span class="pull-right">
+    {% include post/edit.html %}
+  </span>
+</span>

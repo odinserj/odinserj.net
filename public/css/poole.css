@@ -324,11 +324,16 @@ tbody tr:nth-child(odd) th {
 }
 
 /* Meta data line below post title */
-.post-date {
+.post-subtitle {
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
+  overflow: hidden;
+}
+
+.post-subtitle a {
+  color: #9a9a9a!important;
 }
 
 /* Related posts */
