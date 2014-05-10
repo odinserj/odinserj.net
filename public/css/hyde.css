@@ -264,10 +264,6 @@ footer {
   overflow: hidden;
 }
 
-footer .copy {
-  color: #505050;
-}
-
 @media (min-width: 48rem) {
   footer .copy {
     float: right;
