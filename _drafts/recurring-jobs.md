@@ -4,19 +4,19 @@ layout: post
 
 Recurring jobs and ASP.NET applications have a long story. At the same time, the story is short, because you need to kick them off to external Windows Service to run them in a reliable way (see the [great article](http://haacked.com/archive/2011/10/16/the-dangers-of-implementing-recurring-background-tasks-in-asp-net.aspx/) by Phil Haack).
 
-But Windows Services add additional complexity to your projects, especially on the initial stage of development. And it is sometimes hard enough to make a decision to install them only to send, for example, emails.
+But Windows Services add additional complexity to your projects, especially on the initial stage of development. And it is sometimes hard enough to make a decision to install them only, for example, to send emails.
 
 Recently I pushed my open-source project [HangFire](http://hangfire.io) – the solution to process background jobs in ASP.NET in a reliable way. Despite it does not support recurring jobs yet (but there are plans to implement it), it can greatly help you to postpone the decision to install Windows Service or completely forget about it.
 
-In short, there are three risks of running recurring jobs inside ASP.NET applications (I changed the last one, comparing to the given article by Phil Haack):
+In short, there are three risks of running recurring jobs inside ASP.NET applications (I changed the last one, comparing to the article by Phil Haack):
 
 1. Your application domain can be unloaded at any time for a number of reasons, and this can kill your threads in the middle of a job processing (even if you are using the `HostingEnvironment.RegisterObject` statement). No retries are made out of the box.
 2. Multiple instances of your application (Web Gardens and Web Farm environments) can lead to multiple execution of the same task.
 3. Your application domain may be not running. And your job firings can be missed.
 
-The first risk can be eliminated by HangFire completely, that is why I wrote this article. If the second risk is actual for you, there is a `WebBackgrounder` library. And the third risk is fixed by the developers of ASP.NET (but you should make some changes to your configuration).
+The first risk can be eliminated by HangFire completely, that is why I wrote this article. If the second risk is actual for you, there is a `WebBackgrounder` library. And the third risk is fixed already by the developers of ASP.NET, but requires some changes to your configuration.
 
-So, you can forget about using Windows Services to process jobs in the background in your web applications.
+So, you can forget about using Windows Services to process jobs in the background in your web applications. But let's talk about them more closely.
 
 ### Unexpected AppDomain unload
 
