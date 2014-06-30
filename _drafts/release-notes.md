@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HangFire X.X.X Released
+title: Hangfire X.X.X Released
 ---
 
 *Insert release notes here*
@@ -11,6 +11,6 @@ title: HangFire X.X.X Released
 
 ## Links
 
-* [HangFire Official Site](http://hangfire.io)
-* [HangFire GitHub Project](https://github.com/odinserj/HangFire)
-* [HangFire Packages](https://www.nuget.org/packages?q=hangfire)
+* [Hangfire Official Site](http://hangfire.io)
+* [Hangfire GitHub Project](https://github.com/HangfireIO/Hangfire)
+* [Hangfire Packages](https://www.nuget.org/packages?q=hangfire)
