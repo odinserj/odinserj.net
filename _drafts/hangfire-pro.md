@@ -3,7 +3,7 @@ layout: post
 title: Introducing Hangfire Pro
 ---
 
-As an ASP.NET developer, I always wished to have something simple to handle scenarios where you need to build a long-running async process and show a loader to the user:
+As an ASP.NET developer, I always wished to have something simple to handle scenarios where you need to build a long-running async process and show loader to a user:
 
 <p style="text-align: center">
     <img src="/img/ajax-loader.gif" alt="Loader" style="width:54px;display:inline;margin-bottom:0;">
@@ -13,6 +13,7 @@ As an ASP.NET developer, I always wished to have something simple to handle scen
     <em>Nothing is being loaded, don't let it hypnotize yourself!</em>
 </p>
 
+But every time I faced with Windows Services, message queues and other difficult-to-understand and hard-to-maintain entities. That is why I started to develop [Hangfire](http://hangfire.io), background job system for .NET, an alternative to Rails' [Sidekiq](http://sidekiq.org).
 
 Slightly more than a year passed from the [first commit](https://github.com/HangfireIO/Hangfire/tree/d58a619ebc487ef28bef8c6e7f4df8e1d51ee8c5) and [first version](https://www.nuget.org/packages/HangFire/0.1.0) of Hangfire. This is my first open-source project that is being used more than in one organization, and this was an amazing experience for me to grow the project from scratch. I'm glad to see more and more people coming to the project and giving positive ratings and feedback.
 
@@ -39,7 +40,7 @@ Two [most](https://github.com/HangfireIO/Hangfire/issues/122) [wanted](https://g
 
 Hangfire Pro already includes previously mentioned new version of **Hangfire Redis** package and a completely new **Hangfire.PerformanceCounters** package. The latter pushes internal metrics to Windows Performance Counters to proactively monitor issues with background job processing:
 
-![Performance Monitor with Hangfire counters](http://localhost:4001/img/perfmon.png)
+![Performance Monitor with Hangfire counters](http://hangfire.io/img/perfmon.png)
 
 Hangfire Pro is available through the subscriptions you can buy at the [official site](http://hangfire.io/subscriptions/). After purchasing one of the subscriptions, you will be able to do the following things:
 
@@ -68,7 +69,7 @@ BatchJob
 
 ### Async Methods Support
 
-As with async controllers in ASP.NET MVC, this feature enables you to improve overall throughput keeping the lowest numbers of workers. Instead of waiting for an outstanding I/O operation, they will be able to process other background jobs as well.
+As with async controllers in ASP.NET MVC, this feature enables you to improve overall throughput keeping the lowest number of workers. Instead of waiting for an outstanding I/O operation, they will be able to process other background jobs as well.
 
 ```csharp
 public static async Task HighlightAsync(int snippetId)
