@@ -80,3 +80,11 @@ public static async Task HighlightAsync(int snippetId)
     await Context.SaveChangesAsync();
 }
 ```
+
+## What are you waiting for?
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque voluptas nihil doloribus repudiandae facilis nesciunt harum. Sint eius, architecto aut, quibusdam dolor voluptatibus quae, numquam quam est atque nihil quidem.
+
+<div style="text-align: center;">
+    <a class="btn btn-lg btn-success" href="http://hangfire.io/subscriptions/">Get a Subscription</a>
+</div>
