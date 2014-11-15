@@ -13,7 +13,7 @@ As an ASP.NET developer, I always wanted to have something simple to handle scen
     <em>Nothing is being loaded here, don't let hypnotize yourself!</em>
 </p>
 
-But every time I faced Windows Services, message queues and other difficult-to-understand problems and hard-to-maintain solutions, my head exploded into a billion pieces. At the same time I looked at Rails' [Sidekiq](http://sidekiq.org) and wished to have a simple .NET alternative for background job processing. That is why I began to develop [Hangfire](http://hangfire.io) (yep, just for the loader above).
+But every time I faced Windows Services, message queues and other difficult-to-understand problems and hard-to-maintain solutions, my head exploded into a billion pieces. At the same time I looked at Rails' [Sidekiq](http://sidekiq.org) and wished to have a simple .NET alternative for background job processing. That is why I began to develop [Hangfire](http://hangfire.io) (yep, just for the loader).
 
 Slightly more than a year passed from the [first commit](https://github.com/HangfireIO/Hangfire/tree/d58a619ebc487ef28bef8c6e7f4df8e1d51ee8c5) and [first version](https://www.nuget.org/packages/HangFire/0.1.0) of Hangfire. This was my first open-source project that is being used more than in one organization, and it was an amazing experience for me to grow a project from scratch. I'm glad to see more and more people coming to the project and giving positive ratings and unvaluable feedback.
 
