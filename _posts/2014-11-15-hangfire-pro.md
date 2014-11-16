@@ -27,9 +27,9 @@ Today, I'm introducing a new stage of Hangfire development – [Hangfire Pro](ht
 
 First, I'll start with bad news – Hangfire.Redis package is moved to Hangfire Pro. This means that it became available only for Pro users and will be removed from public NuGet Gallery soon. 
 
-I understand that this step breaks expectations for current users, that is why it will be still available at [Hangfire.Redis](https://github.com/HangfireIO/Hangfire.Redis) repository, but there will be no updates and official support. 
+I understand that this step breaks your expectations, and I'm sorry for this. The source code will be available at [Hangfire.Redis](https://github.com/HangfireIO/Hangfire.Redis) repository, but there will be no updates and official support.
 
-Other existing parts of Hangfire **will not be** moved to the Pro version ever. Moreover, I'll try to do the vice versa, by open-sourcing paid extensions in the future, when the project will be more stable.
+**Other existing parts of Hangfire will not be moved to the Pro version ever**. Moreover, I'll try to do the vice versa, by open-sourcing paid extensions in the future, when the project will be more stable.
 
 ### Good News
 
