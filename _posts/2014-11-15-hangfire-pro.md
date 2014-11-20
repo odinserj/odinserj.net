@@ -19,7 +19,7 @@ Slightly more than a year passed from the [first commit](https://github.com/Hang
 
 I want to keep Hangfire project as free as possible, but eliminate the most dangerous risk – the absence of time. There are many things to be done, including problems, new features, documentation, and I want to do them in a reasonable time.
 
-Today, I'm introducing a new stage of Hangfire development – [Hangfire Pro](http://hangfire.io/pro/). It is a set of paid libraries that extend basic Hangfire functionality (now called [Hangfire Core](http://hangfire.io/core/)) by providing features to improve performance and simplifying maintenance of background job processing in larger applications.
+Today, I'm introducing a new stage of Hangfire development – [Hangfire Pro](http://hangfire.io/pro/). It is a set of paid libraries that extend Hangfire functionality by providing features to improve performance and simplifying maintenance of background job processing in larger applications.
 
 ## The Destiny of Hangfire.Redis
 
@@ -48,7 +48,7 @@ Hangfire Pro is available through the subscriptions you can buy at the [official
 
 * Access to Hangfire Pro package **binaries** and **sources** on the private GitHub repository.
 * Access to **priority and private support** by dedicated e-mail (public forum discussions will be always free).
-* Use Hangfire Core under **EULA** for organizations that don't want to use open-source licenses.
+* Use Hangfire under **EULA** for organizations that don't want to use open-source licenses.
 
 ## Hangfire Pro Roadmap
 
