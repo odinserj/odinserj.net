@@ -52,3 +52,14 @@
     background-color: #449d44;
     border-color: #398439;
 }
+
+pre {
+    white-space: pre;
+    word-break: inherit;
+    word-wrap: normal;
+    overflow-x: auto;
+}
+
+code {
+    word-break: break-all;
+}
