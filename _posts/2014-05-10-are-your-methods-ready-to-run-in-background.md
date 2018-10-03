@@ -9,9 +9,9 @@ HangFire takes regular classes and regular methods to perform them in the backgr
 BackgroundJob.Enqueue(() => Console.WriteLine("Hi!"));
 ```
 
-This snippet says that the `Console.WriteLine` method will be *called* in background. But notice that the name of the method is `Enqueue`, and not the `Call`, `Invoke` and so on. 
+This snippet says that the `Console.WriteLine` method will be *called* in background. But notice that the name of the method is `Enqueue`, and not `Call`, `Invoke` and so on. 
 
-The name of the method was choosed to highlight that invocation of a given method is only being *queued* in the current execution context and returns the control to a calling thread immediately after enqueueing. It will be invoked in a *different* execution context. 
+The name of the method was chosen to highlight that invocation of a given method is only being *queued* in the current execution context and returns the control to a calling thread immediately after enqueueing. It will be invoked in a *different* execution context. 
 
 What does this mean? Several things, that may break your usual expectations about method invocation process. You should be aware of them.
 
@@ -19,7 +19,7 @@ What does this mean? Several things, that may break your usual expectations abou
 
 ### Method invocation is being serialized
 
-Before creating a background job, the information about the given method (its type, method name and parameter types) is being serialized to strings. MethodInfo serialization process is absolutely invisible to a user, unlike arguments serialization. 
+Before creating a background job, the information about the given method (its type, method name and parameter types) are serialized to strings. MethodInfo serialization process is absolutely invisible to a user, unlike arguments serialization. 
 
 Arguments are also serialized to string, but arguments serialization process uses the `TypeConverter` class. All standard classes like numbers, strings, dates and so on already have the corresponding `TypeConverter` implementation, but if you want to pass an instance of a custom class as an argument, you should write the custom converter first.
 
@@ -54,20 +54,20 @@ public void Method()
 
 ### Delayed invocation
 
-Background job method is not being invoked immediately. It is placed on a queue and waits until any worker pick it up. This leads to undefined start time and end time.
+Background job methods are not invoked immediately. It is placed on a queue and waits until any worker pick it up. This leads to an undefined start time and end time.
 
 #### Undefined start-up time
 
-Your method can be invoked tomorrow, after two weeks or six monthes (always true for scheduled jobs, but works with "fail-deploy-retry" practice as well). If it is true even for regular method calls, that application data can be changed or arguments can become stale during the method invocation, especially in a highly concurrent web applications, the probability of these situations in background job processing is very high.
+Your method can be invoked tomorrow, after two weeks or six months (always true for scheduled jobs, but works with "fail-deploy-retry" practice as well). If it is true even for regular method calls, that application data can be changed or arguments can become stale during the method invocation, especially in a highly concurrent web applications, the probability of these situations in background job processing is very high.
 
 Always double-check the data that you pass as arguments and think about its changing nature. Here are some examples:
 
 * You want to publish an article tomorrow, think, what do you need to do: publish its current state, or publish the article itself. In the most cases you'd choose to publish the article itself, changed or unchanged. That is why in this case you need to pass an *article identifier* as an argument.
-* You want to check comments for spam and it is possible to change them. You are creating a new background job on each edit attempt. In this case, you need to check *exactly the given text* for each edit, so pass the whole text as an argument. And after the check is completed, you can compare this text with the current one. If it was changed, then just don't do anything.
+* You want to check comments for spam and it is possible to change them. You are creating a new background job on each edit attempt. In this case, you need to check *exactly the given text* for each edit, so pass the whole text as an argument. And after the check is completed, you can compare this text with the current one. If it was changed, then don't do anything.
 
 #### Undefined end time
 
-We are thinking about the end time, when we want to tell our users about the job was completed. If you do something inside the request processing synchronously, you can rely on that fact, that this information will be available for a user immediately. That is why you can redirect her to a just created article page.
+We are thinking about the end time, when we want to tell our users about the job was completed. If you do something inside the request processing synchronously, you can rely on that fact that this information will be available for a user immediately. That is why you can redirect her to a just created article page.
 
 But when, for example, you are creating the same article in a background job, you can redirect user to a non-existing page yet, because you can not guarantee that the enqueued job will be processed in time.
 
@@ -125,7 +125,7 @@ public void CheckComment(string message)
 
 Your method can be retried manually (through the Monitor interface) or automatically on failure (i.e on unexpected exception that is unhandler by the method itself).
 
-So, be prepared for this situation. Try to do all your background job methods [idempotent](http://en.wikipedia.org/wiki/Idempotence). If it is impossible, be prepared that in very rare cases it can fire multiple times.
+So, be prepared for this situation. Try to make all your background job methods [idempotent](http://en.wikipedia.org/wiki/Idempotence). Be prepared, in very rare cases, that your background job can fire multiple times.
 
 You can always disable the automatic retry feature by applying the `[Retry(0)]` filter to the exact method or globally. But to successfully fight with ASP.NET unexpected application domain unload in the middle of a job processing, HangFire retries them automatically despite of the given attribute. But don't worry too much, these cases happen very rarely.
 
@@ -154,7 +154,7 @@ You can safely change parameter names, but the following things will lead to a b
 
 * Addition and removal of method parameters.
 * Parameter type changes.
-* Parameters reordering.
+* Parameter reordering.
 * Method name changes.
 * Method's type name changes.
 * Method removal.
@@ -171,7 +171,7 @@ public void OldMethod(string arg1, int arg2)
     NewMethod(arg1, arg2, DefaultValueForArg3);
 }
 
-public void NewMethod(stirng arg1, int arg2, double arg3)
+public void NewMethod(string arg1, int arg2, double arg3)
 {
     // Real processing
 }
